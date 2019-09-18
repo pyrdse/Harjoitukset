@@ -25,6 +25,7 @@ namespace Example
                 Console.WriteLine("Keskiarvo on: " + ka);
             }
             else
+            { 
          
                 Console.WriteLine("Lukuja ei syötetty!");
             }
