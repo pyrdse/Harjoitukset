@@ -18,10 +18,12 @@ namespace IF_harjoitus_1._4
                 if (b<c)
                 {
                     Console.WriteLine("{0} {1} {2}", a, b, c);
+                    Console.ReadKey();
                 }
                 else
                 {
                     Console.WriteLine("{0} {1} {2}", a, c, b);
+                    Console.ReadKey();
                 }
             }
             else if ((b<a)&&(b<c))
@@ -29,10 +31,12 @@ namespace IF_harjoitus_1._4
                 if (a < c)
                 {
                     Console.WriteLine("{0} {1} {2}", b, a, c);
+                    Console.ReadKey();
                 }
                 else
                 {
                     Console.WriteLine("{0} {1} {2}", b, c, a);
+                    Console.ReadKey();
                 }
             }
             else if ((c<a)&&(c<b))
@@ -40,10 +44,12 @@ namespace IF_harjoitus_1._4
                     if (a<b)
                     {
                     Console.WriteLine("{0} {1} {2}", c, a, b);
-                    }
+                    Console.ReadKey();
+                }
                     else
                     {
                         Console.WriteLine("{0} {1} {2}", c, b, a);
+                        Console.ReadKey();
                     }
                 }
             }
