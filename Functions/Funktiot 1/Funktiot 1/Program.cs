@@ -23,17 +23,7 @@ namespace Funktiot_1
 
         static bool IsValidNumber (int userInput)
         {
-            return userInput > 0;
-            /*
-            if (userInput > 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-            */
+            return userInput > 0;        
         }
 
 

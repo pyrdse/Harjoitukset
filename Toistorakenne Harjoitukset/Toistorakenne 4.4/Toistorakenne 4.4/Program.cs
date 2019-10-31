@@ -34,7 +34,7 @@ namespace Toistorakenne_4._4
             }
             Console.WriteLine("Coin was flipped " + k + " times.");
             Console.WriteLine("Heads was flipped: "+ heads);
-            Console.WriteLine("Heads was flipped: "+ tails);
+            Console.WriteLine("Tails was flipped: "+ tails);
             return;
         }
 

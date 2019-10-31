@@ -20,8 +20,7 @@ namespace Toistorakenne_4._6
                 }
             }
             Console.WriteLine("");
-            Console.WriteLine($"Numero kuusi arvottiin {six} kertaa.");
-            return;
+            Console.WriteLine($"Number six was scored {six} times.");
         }
     }
 }

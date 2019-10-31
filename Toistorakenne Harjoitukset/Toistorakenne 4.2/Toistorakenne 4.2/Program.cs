@@ -11,6 +11,7 @@ namespace Toistorakenne_4._2
             Console.Write("\n\n");
 
             int i, k, p;
+
             for (i = 1; i <= 9; i++)
             {
                 for (k = 1; k <= 9; k++)
@@ -18,7 +19,7 @@ namespace Toistorakenne_4._2
                     p = i * k;
                     Console.WriteLine(i + "x" + k + "=" + p + "  ");
                 }
-                Console.WriteLine("   ");            
+                Console.WriteLine("");            
             }
         }
     }
