@@ -6,30 +6,31 @@ namespace Factorial_harjoitus
     {
         static void Main(string[] args)
         {
-            int n = 0;                          // Define variables
+            int n = 0;                          
             int fact = 1;
 
-            Console.WriteLine("Kertoman laskenta");
-            Console.Write("Minkä luvun kertoma lasketaan?: ");
+            Console.WriteLine("This program will calculate the factorial of a given number");
+            Console.Write("Enter a positive integer: ");
 
 
-            n = int.Parse(Console.ReadLine());  // Luetaan käyttäjän syöte ja pakotetaan se integer muotoon
+            n = int.Parse(Console.ReadLine());  
 
-            if (n<0)                            // Ehto, jossa testataan käyttäjän syöttämä arvo. Ohjelman logiikka
+            if (n<0)                            
             {
-                Console.WriteLine("Virheellinen syöte");
+                Console.WriteLine("Invalid feed.");
                 Console.ReadLine();
             }
             else
             {
-                while (n>0)                     // Silmukka jossa lasketaan kertoman arvo
+                while (n>0)                     
                 {
-                    fact = fact * n;            // Lasketaan kertoma
-                    n = n - 1;                  // Vähennetään arvoa yhdellä
+                    fact = fact * n;            
+                    n = n - 1;                  
                 }
-                Console.WriteLine("Vastaus: " + fact);
+                Console.WriteLine("The answer is: " + fact);
                 Console.ReadLine();
             }
+            
 
             
 

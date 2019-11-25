@@ -10,7 +10,8 @@ namespace If_3._5
             int oddNumber = 0;
             int userNumber = 0;
 
-            Console.Write("Enter any number: ");
+            Console.WriteLine("This program calculates the sum of N even and odd numbers.");
+            Console.Write("Enter a positive or negative integer: ");
 
             userNumber = int.Parse(Console.ReadLine());
 
@@ -29,7 +30,6 @@ namespace If_3._5
                 }
                 Console.WriteLine("Sum of even numbers is " + evenNumber);
                 Console.WriteLine("Sum of odd numbers is " + oddNumber);
-
             }
             else
             {
