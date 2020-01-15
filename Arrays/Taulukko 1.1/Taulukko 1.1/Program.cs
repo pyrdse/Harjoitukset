@@ -15,6 +15,7 @@ namespace Taulukko_1._1
             for (int i = 0; i < productTotalPrice.Length; i++)
             {
                 productTotalPrice[i] = productAmount[i] * productPrice[i];
+
                 Console.WriteLine($"Product {i + 1}: {productTotalPrice[i]}€");
             }
         }
