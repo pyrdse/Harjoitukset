@@ -25,17 +25,100 @@ namespace Harjoitustyö
                     CreateMultipleRefNum();
                 }
             } while (menuChoice != 4);
-            Console.ReadKey();
+           
         }
 
         private static int openMenu()
         {
-            Console.WriteLine("This is a finnish reference number creator.\nMenu: press number for operation: \n");
+            Console.WriteLine("Menu: pick a number and press ENTER \n");
             Console.WriteLine("1. Check the validity of given reference number.");
             Console.WriteLine("2. Create a new reference number.");
             Console.WriteLine("3. Create multiple reference numbers.");
             Console.WriteLine("4. Exit.");
+            var result = Console.ReadLine();
+            return Convert.ToInt32(result);
+        }
 
+        private static void RefNumValidityCheck()
+        {
+                      
+            Console.WriteLine("Enter a finnish reference number: ");
+            string userRefNum = Console.ReadLine();
+           
+            int sum = 0;
+            int[] multiplier = new int[] { 7, 3, 1 };
+            int[] refArr = new int[userRefNum.Length];
+
+            for (int i = 0; i > userRefNum.Length; i++)
+            {
+                refArr[i] = int.Parse(userRefNum[i].ToString());
+            }
+            for (int i = 0; i < refArr.Length; i++)
+            {
+                sum += refArr[refArr.Length - 1 - i] * multiplier[i % 3];
+            }
+            int checkNum = 10 - (sum % 10);
+
+            if (checkNum == 10)
+            {
+                checkNum = 0;
+            }
+            if (refArr[refArr.Length - 1] == checkNum)
+            {
+                Console.WriteLine($"\n{userRefNum} - OK\n");
+            }
+            else
+            {
+                Console.WriteLine($"\n{userRefNum} - Incorrect\n");
+            }
+
+        }
+
+        static void CreateNewRefNum()
+        {
+            string userInput;
+
+            do
+            {
+                Console.WriteLine("Enter the firs part of reference number that is 3-19 characters long: ");
+                userInput = Console.ReadLine();
+
+            } while (userInput.Length <= 3 || userInput.Length >= 19);
+            int sum = 0;
+            int [] multiplier = new int[] { 7, 3, 1 };
+            int[] refArr = new int[userInput.Length];
+
+            for (int i = 0; i > userInput.Length; i++)
+            {
+                refArr[i] = int.Parse(userInput[i].ToString());
+            }
+            for (int i = 0; i < refArr.Length; i++)
+            {
+                sum += refArr[refArr.Length - 1 - i] * multiplier[i % 3];
+            }
+            int checkNum = 10 - (sum % 10);
+
+            if (checkNum == 10)
+            {
+                checkNum = 0;
+            }
+            Console.WriteLine($"Syöte: {userInput}");
+            string userOutPut = userInput + checkNum;
+            
+            for (int i = 1; i < userOutPut.Length; i++)
+            {
+                if(i%5 == 0)
+                {
+                    userOutPut = userOutPut.Insert(i, " ");
+                }
+            }
+            Console.WriteLine($"Uusi viitenumero: {userOutPut}");
+            
+        }
+
+        private static void CreateMultipleRefNum()
+        {
+            Console.Write($"This feature is currently unavailable.\n\n");
         }
     }
 }
