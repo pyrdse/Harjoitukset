@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.Globalization;
 namespace Harjoitustyö
 {
     class Program
@@ -44,34 +44,45 @@ namespace Harjoitustyö
                       
             Console.WriteLine("Enter a finnish reference number: ");
             string userRefNum = Console.ReadLine();
-           
-            int sum = 0;
-            int[] multiplier = new int[] { 7, 3, 1 };
-            int[] refArr = new int[userRefNum.Length];
 
-            for (int i = 0; i > userRefNum.Length; i++)
+            
+            if (userRefNum.Length > 20)                                             
             {
-                refArr[i] = int.Parse(userRefNum[i].ToString());
+                Console.WriteLine("Reference number max lenght is 20 characters");
             }
-            for (int i = 0; i < refArr.Length; i++)
+            else if (userRefNum.Length < 4)
             {
-                sum += refArr[refArr.Length - 1 - i] * multiplier[i % 3];
-            }
-            int checkNum = 10 - (sum % 10);
-
-            if (checkNum == 10)
-            {
-                checkNum = 0;
-            }
-            if (refArr[refArr.Length - 1] == checkNum)
-            {
-                Console.WriteLine($"\n{userRefNum} - OK\n");
+                Console.WriteLine("Reference number min lenght is 4 characters");
             }
             else
             {
-                Console.WriteLine($"\n{userRefNum} - Incorrect\n");
-            }
+                int sum = 0;
+                int[] multiplier = new int[] { 7, 3, 1 };
+                int[] refArr = new int[userRefNum.Length];
 
+                for (int i = 0; i < userRefNum.Length; i++)
+                {
+                    refArr[i] = int.Parse(userRefNum[i].ToString());
+                }
+                for (int i = 0; i < refArr.Length; i++)
+                {
+                    sum += refArr[refArr.Length - 1 - i] * multiplier[i % 3];
+                }
+                int checkNum = 10 - (sum % 10);
+
+                if (checkNum == 10)
+                {
+                    checkNum = 0;
+                }
+                if (refArr[refArr.Length - 1] == checkNum)
+                {
+                    Console.WriteLine($"\n{userRefNum} - OK\n");
+                }
+                else
+                {
+                    Console.WriteLine($"\n{userRefNum} - Incorrect\n");
+                }
+            }
         }
 
         static void CreateNewRefNum()
@@ -88,7 +99,7 @@ namespace Harjoitustyö
             int [] multiplier = new int[] { 7, 3, 1 };
             int[] refArr = new int[userInput.Length];
 
-            for (int i = 0; i > userInput.Length; i++)
+            for (int i = 0; i < userInput.Length; i++)
             {
                 refArr[i] = int.Parse(userInput[i].ToString());
             }
@@ -107,12 +118,12 @@ namespace Harjoitustyö
             
             for (int i = 1; i < userOutPut.Length; i++)
             {
-                if(i%5 == 0)
+                if(i % 5 == 0)
                 {
                     userOutPut = userOutPut.Insert(i, " ");
                 }
             }
-            Console.WriteLine($"Uusi viitenumero: {userOutPut}");
+            Console.WriteLine($"\nUusi viitenumero: {userOutPut}\n");
             
         }
 
